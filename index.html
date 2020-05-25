@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script>
+    <style>
+      .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        }
+
+        .box {
+        margin: 5px;
+        width: calc(25% - 10px);
+        background: tan;
+        outline: 3px solid brown;
+        font-size: 4vw;
+        line-height: 8vh;
+        overflow: hidden;
+        }
+        .box img {
+        width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+  <div class="wrap">
+  
+    <div class="box" v-for="i in 4">
+        Almost before we knew it, we had left the ground.
+    </div>
+    
+  </div>
+  
+  <br><hr><br>
+  
+  <div class="wrap">
+  
+    <div class="box" v-for="i in 4">    
+      <img src="https://pbs.twimg.com/media/DOCf4eJUQAAhlbb.jpg">
+    </div>
+    
+  </div>
+  
+  <br><hr><br>
+  
+  <div class="wrap">
+  
+    <div class="box" v-for="i in 4">    
+      <div v-if="i == 3"><img src="https://pbs.twimg.com/media/DOCf4eJUQAAhlbb.jpg"></div>
+      <div v-else>Almost before we knew it, we had left the ground.</div>      
+    </div>
+    
+  </div>
+</div>
+<script>
+  let vm = new Vue( {
+    el: '#app',
+
+  })
+</script>
+</body>
+</html>
